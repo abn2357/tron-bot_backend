@@ -24,8 +24,8 @@ class ContextConfig(BaseModel):
 
 
 class ModelsConfig(BaseModel):
-    rewriter: str = "claude-sonnet-4-20250514"
-    generator: str = "claude-opus-4-20250514"
+    rewriter: str = "claude-sonnet-4-6"
+    generator: str = "claude-opus-4-6"
     embedding: str = "BAAI/bge-base-zh-v1.5"
 
 

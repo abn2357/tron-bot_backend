@@ -11,8 +11,8 @@ context:
 
 # 模型
 models:
-  rewriter: "claude-sonnet-4-20250514"
-  generator: "claude-opus-4-20250514"
+  rewriter: "claude-sonnet-4-6"
+  generator: "claude-opus-4-6"
   embedding: "BAAI/bge-base-zh-v1.5"
 
 # 检索
