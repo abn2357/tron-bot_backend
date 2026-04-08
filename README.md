@@ -27,6 +27,14 @@
 - Chroma 向量库已构建（见下方「构建向量库」）
 - Anthropic API Key 或 Auth Token
 
+### 安装并启动 Redis（macOS）
+
+```bash
+brew install redis
+brew services start redis
+redis-cli ping  # 返回 PONG 表示正常
+```
+
 ### 创建虚拟环境
 
 ```bash
