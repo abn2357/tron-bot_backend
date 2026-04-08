@@ -24,13 +24,33 @@
 
 - Python 3.10+
 - Redis 运行中
-- Chroma 向量库已构建（`./chroma_db` 目录下需有 `knowledge_base` collection）
+- Chroma 向量库已构建（见下方「构建向量库」）
 - Anthropic API Key
 
-### 安装与运行
+### 安装依赖
 
 ```bash
 pip install -r requirements.txt
+```
+
+### 构建向量库
+
+从 [tronprotocol/documentation-zh](https://github.com/tronprotocol/documentation-zh) 自动拉取文档，按 mkdocs.yml 中 nav 列出的文件进行分块、向量化，写入 Chroma。
+
+```bash
+python scripts/build_vectordb.py
+```
+
+脚本会自动克隆文档仓库到 `./documentation-zh`，后续再运行会自动拉取最新版本。构建完成后向量库位于 `./chroma_db`。
+
+可选参数：
+- `--skip-clone`：跳过 git clone/pull，直接使用本地已有的文档仓库
+- `--repo-dir <path>`：指定文档仓库本地路径
+- `--chroma-path <path>`：指定向量库输出路径
+
+### 启动服务
+
+```bash
 export ANTHROPIC_API_KEY=your_key
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
