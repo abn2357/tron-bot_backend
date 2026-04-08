@@ -27,6 +27,14 @@
 - Chroma 向量库已构建（见下方「构建向量库」）
 - Anthropic API Key
 
+### 创建虚拟环境
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+# venv\Scripts\activate   # Windows
+```
+
 ### 安装依赖
 
 ```bash
