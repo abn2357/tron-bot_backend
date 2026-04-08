@@ -25,7 +25,7 @@
 - Python 3.10+
 - Redis 运行中
 - Chroma 向量库已构建（见下方「构建向量库」）
-- Anthropic API Key
+- Anthropic API Key 或 Auth Token
 
 ### 创建虚拟环境
 
@@ -59,7 +59,7 @@ python scripts/build_vectordb.py
 ### 启动服务
 
 ```bash
-export ANTHROPIC_API_KEY=your_key
+export ANTHROPIC_API_KEY=your_key        # 或 export ANTHROPIC_AUTH_TOKEN=your_token
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
@@ -67,7 +67,8 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 | 变量 | 说明 | 默认值 |
 |------|------|--------|
-| `ANTHROPIC_API_KEY` | Claude API 密钥 | 无（必填） |
+| `ANTHROPIC_API_KEY` | Claude API 密钥（二选一） | 无 |
+| `ANTHROPIC_AUTH_TOKEN` | Claude Auth Token（二选一） | 无 |
 | `REDIS_URL` | Redis 连接地址 | `redis://localhost:6379/0` |
 | `SERVER_PORT` | 服务端口 | `8000` |
 | `CORS_ORIGINS` | 允许的跨域来源（逗号分隔） | `*` |
