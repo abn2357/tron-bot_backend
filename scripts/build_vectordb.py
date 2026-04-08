@@ -10,6 +10,8 @@ import chromadb
 import yaml
 from sentence_transformers import SentenceTransformer
 
+from app.config import settings
+
 logger = logging.getLogger(__name__)
 
 # --- Constants ---
@@ -17,7 +19,7 @@ REPO_URL = "https://github.com/tronprotocol/documentation-zh.git"
 REPO_DIR = Path("./documentation-zh")
 CHROMA_PATH = "./chroma_db"
 COLLECTION_NAME = "knowledge_base"
-EMBEDDING_MODEL = "BAAI/bge-base-zh-v1.5"
+EMBEDDING_MODEL = settings.models.embedding
 MAX_CHUNK_CHARS = 1500
 MIN_CHUNK_CHARS = 100
 BATCH_SIZE = 100
