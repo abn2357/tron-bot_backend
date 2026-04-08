@@ -1,6 +1,6 @@
 # 配额
 quota:
-  ip_rate_limit: 30          # 每个 IP 每分钟最多请求数
+  ip_rate_limit: 10          # 每个 IP 每分钟最多请求数
   user_daily_limit: 50       # 每个用户指纹每天最多请求数
   user_session_limit: 20     # 每个 Session 最多对话轮数
 
@@ -23,7 +23,7 @@ retrieval:
 # Redis
 redis:
   url: "redis://localhost:6379/0"
-  history_ttl: 86400         # 对话历史 TTL：24 小时
+  history_ttl: 3600          # 对话历史 TTL：1 小时
   quota_ttl: 86400           # 配额计数 TTL：24 小时
 
 # 服务
