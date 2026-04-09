@@ -67,7 +67,7 @@ python scripts/build_vectordb.py
 ### 启动服务
 
 ```bash
-export ANTHROPIC_API_KEY=your_key
+export ANTHROPIC_AUTH_TOKEN=your_key
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
@@ -75,7 +75,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 | 变量 | 说明 | 默认值 |
 |------|------|--------|
-| `ANTHROPIC_API_KEY` | Claude API 密钥 | 无（必填） |
+| `ANTHROPIC_AUTH_TOKEN` | Claude API 密钥 | 无（必填） |
 | `REDIS_URL` | Redis 连接地址 | `redis://localhost:6379/0` |
 | `SERVER_PORT` | 服务端口 | `8000` |
 | `CORS_ORIGINS` | 允许的跨域来源（逗号分隔） | `*` |
