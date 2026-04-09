@@ -1,10 +1,15 @@
 from collections.abc import AsyncGenerator
 
+import os
+
 import anthropic
 
 from app.config import settings
 
-client = anthropic.Anthropic()
+client = anthropic.Anthropic(
+    base_url=settings.models.base_url,
+    api_key=os.environ.get("ANTHROPIC_AUTH_TOKEN"),
+)
 
 SYSTEM_PROMPT_WITH_CONTEXT = """你是一个知识问答助手。请根据以下参考资料回答用户的问题。
 

@@ -1,8 +1,13 @@
+import os
+
 import anthropic
 
 from app.config import settings
 
-client = anthropic.Anthropic()
+client = anthropic.Anthropic(
+    base_url=settings.models.base_url,
+    api_key=os.environ.get("ANTHROPIC_AUTH_TOKEN"),
+)
 
 REWRITE_SYSTEM_PROMPT = """你是一个查询重写助手。你的任务是将用户的提问改写为更适合向量检索的独立查询。
 

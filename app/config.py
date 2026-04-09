@@ -24,6 +24,7 @@ class ContextConfig(BaseModel):
 
 
 class ModelsConfig(BaseModel):
+    base_url: str = "https://api.anthropic.com"
     rewriter: str = "claude-sonnet-4-6"
     generator: str = "claude-opus-4-6"
     embedding: str = "BAAI/bge-base-zh-v1.5"

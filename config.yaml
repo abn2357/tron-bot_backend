@@ -11,6 +11,7 @@ context:
 
 # 模型
 models:
+  base_url: "https://ai-gateway.infraway.co"
   rewriter: "claude-sonnet-4-6"
   generator: "claude-opus-4-6"
   embedding: "BAAI/bge-base-zh-v1.5"
